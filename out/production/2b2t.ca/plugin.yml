@@ -1,0 +1,21 @@
+name: 2b2t.ca
+main: argagaes.plugin.twobetatwotoolsca.Main
+version: 1.0.0
+description: 2b2t.ca plugin by Argagaes
+commands:
+  msg:
+    description: Message a person
+    syntax: /<command> <playername> <message>
+    aliases: [w,tell,whisper]
+  r:
+    description: Reply to the last person that messaged you
+    syntax: /<command> <message>
+    aliases: [reply]
+  list:
+    description: Provides you with a list of all online players
+    syntax: /<command>
+    aliases: [online,playerlist,tab]
+  2b2t:
+    description: 2b2t commands
+    syntax: /<command>
+    aliases: []

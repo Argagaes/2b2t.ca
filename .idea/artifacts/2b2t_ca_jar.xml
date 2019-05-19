@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="2b2t.ca:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/2b2t_ca_jar</output-path>
+    <root id="archive" name="2b2t.ca.jar">
+      <element id="module-output" name="2b2t.ca" />
+    </root>
+  </artifact>
+</component>

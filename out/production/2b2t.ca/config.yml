@@ -1,0 +1,17 @@
+# Default Configuration File for 2b2t.ca Plugin
+
+SpawnRadius: 1000
+
+Random MOTDs:
+- Example.
+- This is a random MOTD!
+- MOTD randomizer made by Me!
+- Blah...
+- Blah, blah...
+- Just keep adding!
+
+Red chat players:
+- Notch
+
+Blue chat players:
+- Notch

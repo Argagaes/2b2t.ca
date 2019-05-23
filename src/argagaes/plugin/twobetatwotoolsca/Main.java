@@ -18,7 +18,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 public class Main
 extends JavaPlugin
 {
-	public String version = "1.2.5 Community Edition";
+	public String version = "1.3.2";
 	File configFile;
 	FileConfiguration config;
 	Listeners listener;
@@ -152,7 +152,7 @@ extends JavaPlugin
 		{
 			if (args.length == 0) {
 				sender.sendMessage("\247a2b2t.ca plugin made by Argagaes §a(Community Edition)");
-				sender.sendMessage("\2479Current Version: 1.0.0");
+				sender.sendMessage("\2479Current Version: 1.1.0");
 				sender.sendMessage("\2479For Minecraft: " + version);
 				return true;
 			}

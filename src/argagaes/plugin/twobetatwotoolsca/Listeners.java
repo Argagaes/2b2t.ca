@@ -24,9 +24,7 @@ import org.bukkit.event.weather.LightningStrikeEvent;
 public class Listeners implements Listener {
 
 	Main main;
-	List<String> unallowedCommands = Arrays.asList("op", "give", "ban", "kick", "tp", "ban-ip",
-			"banlist", "deop", "gamemode", "pardon", "pardon-ip", "reload", "save-all", "save-off", "save-on",
-			"time", "timings", "toggledownfall", "weather", "whitelist", "xp");
+	List<String> allowedCommands = Arrays.asList("help", "list", "pl", "plugins", "2b2t", "r", "online", "playerlist", "msg", "w", "tell", "whisper");
 
 	public Listeners(Main main) {
 		this.main = main;
@@ -85,7 +83,7 @@ public class Listeners implements Listener {
 	public void onPlayerCommandPreprocessEvent(ServerCommandEvent e)
 	{
 		String command = e.getCommand();
-		if (unallowedCommands.stream().anyMatch(str -> command.toLowerCase().startsWith(str)))
+		if (!allowedCommands.stream().anyMatch(str -> command.toLowerCase().startsWith(str)))
 		{
 			e.setCommand(" ");
 		}
@@ -268,7 +266,7 @@ public class Listeners implements Listener {
 			e.getPlayer().sendMessage("§2/r - §4reply to a user.");
 			e.getPlayer().sendMessage("§2/timetracker -§4TimeTracker plugin help.");
 			e.getPlayer().sendMessage("§2/2b2t - §42b2t.ca plugin info.");
-		} else if (unallowedCommands.stream().anyMatch(str -> command.toLowerCase().startsWith(str)))
+		} else if (!allowedCommands.stream().anyMatch(str -> command.toLowerCase().startsWith(str)))
 		{
 			e.setCancelled(true);
 			e.getPlayer().sendMessage(error);

@@ -1,6 +1,6 @@
 name: 2b2t.ca
 main: argagaes.plugin.twobetatwotoolsca.Main
-version: 1.0.0
+version: 1.1.0
 description: 2b2t.ca plugin by Argagaes
 commands:
   msg:
@@ -14,7 +14,7 @@ commands:
   list:
     description: Provides you with a list of all online players
     syntax: /<command>
-    aliases: [online,playerlist,tab]
+    aliases: [online,playerlist]
   2b2t:
     description: 2b2t commands
     syntax: /<command>

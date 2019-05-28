@@ -24,7 +24,7 @@ import org.bukkit.event.weather.LightningStrikeEvent;
 public class Listeners implements Listener {
 
 	Main main;
-	List<String> allowedCommands = Arrays.asList("list", "pl", "plugins", "2b2t", "r", "online", "playerlist", "msg", "w", "tell", "whisper", "stop");
+	List<String> allowedCommands = Arrays.asList("list", "pl", "plugins", "2b2t", "r", "online", "playerlist", "msg", "w", "tell", "whisper", "stop", "kill", "suicide", "timetracker", "played", "joindate");
 
 	public Listeners(Main main) {
 		this.main = main;
@@ -257,7 +257,7 @@ public class Listeners implements Listener {
 	{
 		String error = "Unknown command. Type \"/help\" for help";
 		String command = e.getMessage();
-		if (e.getMessage().toLowerCase().startsWith("/pl") || e.getMessage().toLowerCase().startsWith("/plugins")) {
+		if (e.getMessage().toLowerCase().equalsIgnoreCase("/pl") || e.getMessage().toLowerCase().startsWith("/plugins")) {
 			e.setCancelled(true);
 			e.setMessage("/ö");
 			String plStr = "\247a";

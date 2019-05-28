@@ -1,6 +1,6 @@
 name: 2b2t.ca
 main: argagaes.plugin.twobetatwotoolsca.Main
-version: 1.1.0
+version: 1.2.0
 description: 2b2t.ca plugin by Argagaes
 commands:
   msg:

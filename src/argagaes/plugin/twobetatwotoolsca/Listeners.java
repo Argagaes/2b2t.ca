@@ -24,7 +24,7 @@ import org.bukkit.event.weather.LightningStrikeEvent;
 public class Listeners implements Listener {
 
 	Main main;
-	List<String> allowedCommands = Arrays.asList("help", "list", "pl", "plugins", "2b2t", "r", "online", "playerlist", "msg", "w", "tell", "whisper");
+	List<String> allowedCommands = Arrays.asList("list", "pl", "plugins", "2b2t", "r", "online", "playerlist", "msg", "w", "tell", "whisper", "stop");
 
 	public Listeners(Main main) {
 		this.main = main;
@@ -257,18 +257,33 @@ public class Listeners implements Listener {
 	{
 		String error = "Unknown command. Type \"/help\" for help";
 		String command = e.getMessage();
+		if (e.getMessage().toLowerCase().startsWith("/pl") || e.getMessage().toLowerCase().startsWith("/plugins")) {
+			e.setCancelled(true);
+			e.setMessage("/ö");
+			String plStr = "\247a";
+			e.getPlayer().sendMessage("\2472Plugins:");
+			for (int i = 0; i < Bukkit.getPluginManager().getPlugins().length; i++) {
+				plStr += Bukkit.getPluginManager().getPlugins()[i].getName();
+				if (i != Bukkit.getPluginManager().getPlugins().length - 1) {
+					plStr += ", ";
+				}
+			}
+			e.getPlayer().sendMessage(plStr + " (" + Bukkit.getPluginManager().getPlugins().length + ")");
+		} else
 		if (e.getMessage().toLowerCase().startsWith("/help"))
 		{
 			e.setCancelled(true);
+			e.setMessage("/ö");
 			e.getPlayer().sendMessage("§6Commands:");
 			e.getPlayer().sendMessage("§2/kill - §4combust yourself instantly.");
 			e.getPlayer().sendMessage("§2/tell - §4send a private message to another user.");
 			e.getPlayer().sendMessage("§2/r - §4reply to a user.");
 			e.getPlayer().sendMessage("§2/timetracker -§4TimeTracker plugin help.");
 			e.getPlayer().sendMessage("§2/2b2t - §42b2t.ca plugin info.");
-		} else if (!allowedCommands.stream().anyMatch(str -> command.toLowerCase().startsWith(str)))
+		} else if (!allowedCommands.stream().anyMatch(str -> command.toLowerCase().startsWith("/" + str)))
 		{
 			e.setCancelled(true);
+			e.setMessage("/ö");
 			e.getPlayer().sendMessage(error);
 		}
 	}
